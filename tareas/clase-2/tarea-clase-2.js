@@ -18,19 +18,19 @@
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
-function sumar (numeroUno, numeroDos) {
+function sumar(numeroUno, numeroDos) {
     return numeroUno + numeroDos;
 }
 
-function restar (numeroUno, numeroDos) {
+function restar(numeroUno, numeroDos) {
     return numeroUno - numeroDos;
 }
 
-function dividir (numeroUno, numeroDos) {
+function dividir(numeroUno, numeroDos) {
     return numeroUno / numeroDos;
 }
 
-function multiplicar (numeroUno, numeroDos) {
+function multiplicar(numeroUno, numeroDos) {
     return numeroUno * numeroDos;
 }
 
