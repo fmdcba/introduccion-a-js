@@ -18,5 +18,37 @@
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
+function sumarDosNumeros (numeroUno, numeroDos) {
+    return resultado = numeroUno + numeroDos;
+}
 
+function restarDosNumeros (numeroUno, numeroDos) {
+    return resultado = numeroUno - numeroDos;
+}
 
+function dividirDosNumeros (numeroUno, numeroDos) {
+    return resultado = numeroUno / numeroDos;
+}
+
+function multiplicarDosNumeros (numeroUno, numeroDos) {
+    return resultado = numeroUno * numeroDos;
+}
+
+let numeroUno = Number(prompt('Ingrese un número para agregar a la operación matemática...'));
+let numeroDos = Number(prompt('Ingrese otro número para operar con el anterior...'));
+let operadorAritmetico = prompt('Por favor, ingrese un operador. Entre estas cuatro opciones: +, -, * ó /');
+let resultado;
+
+if (operadorAritmetico === '+') {
+    sumarDosNumeros(numeroUno, numeroDos)
+} else if (operadorAritmetico === '-') {
+    restarDosNumeros(numeroUno, numeroDos)
+} else if (operadorAritmetico === '/') {
+    dividirDosNumeros(numeroUno, numeroDos)
+} else if (operadorAritmetico === '*') {
+    multiplicarDosNumeros(numeroUno, numeroDos)
+} else {
+    resultado = '"inaccesible" debido a que el operador ingresado no es válido. Reinicie la página e ingrese un operador válido.'
+}
+
+console.log('Resultado de la operación: ' + resultado)
