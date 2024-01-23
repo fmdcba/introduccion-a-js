@@ -8,10 +8,10 @@ function calcularEdadUsuario(anioActual, anioNacimiento){
     return anioActual - anioNacimiento;
 }
 
-const ANIO_NACIMIENTO = Number(prompt('Ingresá tu año de Nacimiento'));
-const ANIO_ACTUAL = Number(prompt('¿Que año es actualmente?'));
+const anioNacimiento = Number(prompt('Ingresá tu año de Nacimiento'));
+const anioActual = Number(prompt('¿Que año es actualmente?'));
 
-console.log('Tu edad es ' + calcularEdadUsuario(ANIO_ACTUAL, ANIO_NACIMIENTO));
+console.log('Tu edad es ' + calcularEdadUsuario(anioActual, anioNacimiento));
 
 // Preguntar el salario anual y calcular el salario mensual
 // Preguntar el salario mensual y calcular el anual
@@ -47,14 +47,14 @@ function calcularSalarioPorHora(salarioAnual){
     return salarioAnual / CANTIDAD_HORAS_EN_UN_ANIO;
 }
 
-const SALARIO_ANUAL = Number(prompt('¿Cuál es tu salario Anual? (Sólo numeros)'));
-const SALARIO_MENSUAL = Number(prompt('¿Cual es tu salario Mensual? (Ayuda: Teniendo en cuenta tu salario anual quizás sea de $' + calcularSalarioMensual(SALARIO_ANUAL) + ')'))
+const salarioAnual = Number(prompt('¿Cuál es tu salario Anual? (Sólo numeros)'));
+const salarioMensual = Number(prompt('¿Cual es tu salario Mensual? (Ayuda: Teniendo en cuenta tu salario anual quizás sea de $' + calcularSalarioMensual(salarioAnual) + ')'))
 
-console.log('Tu salario anual es de $' + calcularSalarioAnual(SALARIO_MENSUAL));
-console.log('Tu salario mensual es de $' + calcularSalarioMensual(SALARIO_ANUAL));
-console.log('Tu salario semanal es de $' + calcularSalarioSemanal(SALARIO_ANUAL));
-console.log('Tu salario diario es de $' + calcularSalarioDiario(SALARIO_ANUAL));
-console.log('Tu salario por hora es de $' + calcularSalarioPorHora(SALARIO_ANUAL));
+console.log('Tu salario anual es de $' + calcularSalarioAnual(salarioMensual));
+console.log('Tu salario mensual es de $' + calcularSalarioMensual(salarioAnual));
+console.log('Tu salario semanal es de $' + calcularSalarioSemanal(salarioAnual));
+console.log('Tu salario diario es de $' + calcularSalarioDiario(salarioAnual));
+console.log('Tu salario por hora es de $' + calcularSalarioPorHora(salarioAnual));
 
 /// SCOPE
 
