@@ -66,15 +66,15 @@ if (usuarioTieneDni === 'si') {
 }
 */
 
-function solicitudAccesoAlBar(){
-  const usuarioTieneDni = controlDniUsuario();
+function solicitarAccesoAlBar(){
+  const tieneDni = controlarDniUsuario();
 
-  if(usuarioTieneDni) {
+  if(tieneDni) {
     verificarEdadMinimaDeIngreso();
   }
 }
 
-function controlDniUsuario(){
+function controlarDniUsuario(){
   const RESPUESTA_AFIRMATIVA = 'si'
   const RESPUESTA_NEGATIVA = 'no'
 
@@ -86,7 +86,7 @@ function controlDniUsuario(){
     console.log('Para acceder al bar necesitas DNI')
     return false;
   } else {
-    solicitudAccesoAlBar()
+    solicitarAccesoAlBar()
   }
 }
 
@@ -99,9 +99,9 @@ function verificarEdadMinimaDeIngreso(){
   const edadUsuario = Number(preguntarEdadUsuario());
 
   if(edadUsuario >=  EDAD_MINIMA_DE_INGRESO) {
-    permisoAccesoAlBar(true);
+    permitirAccesoAlBar(true);
   } else if (edadUsuario <  EDAD_MINIMA_DE_INGRESO) {
-    permisoAccesoAlBar(false);
+    permitirAccesoAlBar(false);
   } else {
     verificarEdadMinimaDeIngreso();
   }
@@ -111,7 +111,7 @@ function preguntarEdadUsuario(){
   return prompt('Ingrese su edad (Por favor, limítese a usar sólo números)');
 }
 
-function permisoAccesoAlBar(acceso){
+function permitirAccesoAlBar(acceso){
   const MENSAJE_BIENVENIDA = 'Bienvenido al Bar!';
   const MENSAJE_DESPEDIDA = 'Vuelve cuando seas mayor de edad.';
 
@@ -122,4 +122,4 @@ function permisoAccesoAlBar(acceso){
   }
 }
 
-solicitudAccesoAlBar();
+solicitarAccesoAlBar();
