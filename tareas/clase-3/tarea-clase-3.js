@@ -46,26 +46,6 @@ if (edadUsuario === 26) {
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
 
-/*
-const usuarioTieneDni = prompt('Bienvenido al bar! Trae usted su DNI?: responder "Si" o "No"').toLowerCase();
-
-if (usuarioTieneDni === 'si') {
-  const edadUsuario = Number(prompt('Ingrese su edad'));
-
-  if (edadUsuario > 18) {
-    console.log('Puede ingresar al Bar')
-  } else if (edadUsuario < 18) {
-    console.log('Menores no pueden ingresar al bar');
-  } else {
-    console.log('la edad ingresada no es válida');
-  }
-} else if (usuarioTieneDni === no) {
-  console.log('No puede ingresar sin DNI');
-} else {
-  console.log('No entiendo la respuesta ya que esta debe ser si o no');
-}
-*/
-
 function solicitarAccesoAlBar(){
   const tieneDni = controlarDniUsuario();
 
@@ -78,7 +58,7 @@ function controlarDniUsuario(){
   const RESPUESTA_AFIRMATIVA = 'si'
   const RESPUESTA_NEGATIVA = 'no'
 
-  const respuestaTieneDni = pedirDniUsuario().toLowerCase()
+  const respuestaTieneDni = pedirDniUsuario();
 
   if(respuestaTieneDni === RESPUESTA_AFIRMATIVA){
     return true;
@@ -96,7 +76,7 @@ function pedirDniUsuario(){
 
 function verificarEdadMinimaDeIngreso(){
   const EDAD_MINIMA_DE_INGRESO = 18;
-  const edadUsuario = Number(preguntarEdadUsuario());
+  const edadUsuario = preguntarEdadUsuario();
 
   if(edadUsuario >=  EDAD_MINIMA_DE_INGRESO) {
     permitirAccesoAlBar(true);
@@ -108,7 +88,7 @@ function verificarEdadMinimaDeIngreso(){
 }
 
 function preguntarEdadUsuario(){
-  return prompt('Ingrese su edad (Por favor, limítese a usar sólo números)');
+  return Number(prompt('Ingrese su edad (Por favor, limítese a usar sólo números)'));
 }
 
 function permitirAccesoAlBar(acceso){
