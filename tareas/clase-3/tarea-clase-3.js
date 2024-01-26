@@ -46,60 +46,23 @@ if (edadUsuario === 26) {
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
 
-function solicitarAccesoAlBar(){
-  const tieneDni = controlarDniUsuario();
+const RESPUESTA_AFIRMATIVA = 'si';
+const RESPUESTA_NEGATIVA = 'no';
+const tieneDocumento = prompt('Bienvenido al bar, tiene documento? (limitarse a responder "si" o "no")').toLowerCase();
 
-  if(tieneDni) {
-    verificarEdadMinimaDeIngreso();
-  }
-}
+if(tieneDocumento === RESPUESTA_AFIRMATIVA){
+  const EDAD_MINIMA_INGRESO = 18;
+  const edadUsuario = Number(prompt('Ingrese su edad (limitarse a usar sólo números)'));
 
-function controlarDniUsuario(){
-  const RESPUESTA_AFIRMATIVA = 'si'
-  const RESPUESTA_NEGATIVA = 'no'
-
-  const respuestaTieneDni = pedirDniUsuario();
-
-  if(respuestaTieneDni === RESPUESTA_AFIRMATIVA){
-    return true;
-  } else if (respuestaTieneDni === RESPUESTA_NEGATIVA){
-    console.log('Para acceder al bar necesitas DNI')
-    return false;
+  if (edadUsuario >= EDAD_MINIMA_INGRESO) {
+    console.log('Bienvenido al bar!')
+  } else if(edadUsuario < EDAD_MINIMA_INGRESO) {
+    console.log('Menores de edad no pueden ingresar al bar!')
   } else {
-    solicitarAccesoAlBar()
+    console.log('No entiendo la respuesta');
   }
+} else if (tieneDocumento === RESPUESTA_NEGATIVA) {
+  console.log('Necesitas documento para entrar al bar!');
+} else {
+  console.log('No entiendo la respuesta');
 }
-
-function pedirDniUsuario(){
-  return prompt('Bienvenido al bar! Trae usted su DNI?: responder "Si" o "No"').toLowerCase();
-}
-
-function verificarEdadMinimaDeIngreso(){
-  const EDAD_MINIMA_DE_INGRESO = 18;
-  const edadUsuario = preguntarEdadUsuario();
-
-  if(edadUsuario >=  EDAD_MINIMA_DE_INGRESO) {
-    permitirAccesoAlBar(true);
-  } else if (edadUsuario <  EDAD_MINIMA_DE_INGRESO) {
-    permitirAccesoAlBar(false);
-  } else {
-    verificarEdadMinimaDeIngreso();
-  }
-}
-
-function preguntarEdadUsuario(){
-  return Number(prompt('Ingrese su edad (Por favor, limítese a usar sólo números)'));
-}
-
-function permitirAccesoAlBar(acceso){
-  const MENSAJE_BIENVENIDA = 'Bienvenido al Bar!';
-  const MENSAJE_DESPEDIDA = 'Vuelve cuando seas mayor de edad.';
-
-  if(acceso) {
-    console.log(MENSAJE_BIENVENIDA);
-  } else {
-    console.log(MENSAJE_DESPEDIDA);
-  }
-}
-
-solicitarAccesoAlBar();
